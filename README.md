@@ -1,15 +1,10 @@
-# keystone-base-template
+# Run locally
 
+npm install
 node keystone.js
 
+## Keystone JS CMS
 
-### Push to staging
-
-```
-git push heroku develop
-```
+This repo uses the Open Source KeystoneJS CMS: http://keystonejs.com/
 
 
-### Push to production
-
-Do it through Heroku interface, push to deploy button
