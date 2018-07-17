@@ -1,0 +1,31 @@
+{
+  "name": "keystonebase",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "async": "~0.9.0",
+    "dotenv": "~0.4.0",
+    "jade": "^1.11.0",
+    "keystone": "^4.0.0-beta.7",
+    "mailgun-js": "^0.7.10",
+    "newrelic": "*",
+    "node-sass": "^3.3.3",
+    "node-sass-middleware": "^0.9.6",
+    "pm2": "~0.15.7",
+    "underscore": "~1.7.0",
+    "express-sslify": "~1.2.0"
+  },
+  "devDependencies": {
+    "gulp": "~3.7.0",
+    "gulp-jshint": "~1.9.0",
+    "jshint-stylish": "~0.1.3",
+    "gulp-watch": "~0.6.5"
+  },
+  "engines": {
+    "node": "8.1.2"
+  },
+  "scripts": {
+    "start": "node keystone.js"
+  },
+  "main": "keystone.js"
+}

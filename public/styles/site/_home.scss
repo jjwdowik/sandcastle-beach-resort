@@ -1,0 +1,167 @@
+// Home Page //
+
+.sc-home-page {
+
+    .btn {
+        padding: 12px 22px;
+        width: 300px;
+        font-size: 21px;
+        line-height: 25px;
+        letter-spacing: 2px;
+        background-color: transparent;
+        border: 1px solid $sc-light-blue;
+        color: $sc-light-blue;
+        &:hover {
+            background-color: $sc-light-blue;
+            color: $sc-dark-blue;
+        }
+    }
+
+    .section-hero {
+        background: url("../images/279_fade.jpg") no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        h1 {
+            display: block;
+            font-family: 'AR JULIAN'; font-weight: 100;
+            text-transform: uppercase;
+            font-size: 55px;
+            &.curve {
+                width: 60%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            @media (max-width: $screen-sm-max) {
+                &.hide {
+                    font-size: 45px;
+                }
+            }
+            @media (max-device-width: $screen-sm-max) {
+                &.curve {
+                    display: none;
+                }
+                &.hide {
+                    display: block!important;
+                }
+            }
+        }
+    }
+
+    .section-amenities {
+        text-align: center;
+        .amentity-wrapper {
+            margin-top: 40px;
+            img {
+                height: 50px;
+                width: 50px;
+            }
+        }
+    }
+
+
+    .section-buildings {
+        text-align: center;
+        background: url("../images/279_fade.jpg") no-repeat center center;
+        -webkit-background-size: cover!important;
+        -moz-background-size: cover!important;
+        -o-background-size: cover!important;
+        background-size: cover!important;
+        background-position: no-repeat center center;
+        background-repeat: no-repeat;
+        min-height: 500px;
+        box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.5);
+        .container {
+            padding-top: 70px;
+            color: white;
+            h1 {
+                font-size: 70px;
+                @media (max-width: $screen-sm-max) {
+                    font-size: 50px;
+                }
+                @media (max-width: 450px) {
+                    font-size: 35px;
+                }
+            }
+            h2 {
+                color: $sc-tan;
+                font-size: $jg-font-size-h2;
+                font-weight: 100;
+                font-style: italic;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                @media (max-width: 450px) {
+                    font-size: 19px;
+                }
+            }
+            p {
+                font-size: $jg-font-size-p;
+                margin-top: 130px;
+                &.large {
+                    font-size: $jg-font-size-h2;
+                    margin-top: 100px;
+                }
+            }
+        }
+    }
+
+
+
+    .section-reviews {
+        text-align: center;
+
+
+
+        .review {
+            min-height: 200px;
+            padding: 20px 20px 20px;
+            border: 2px solid #E8E8E8;
+            border-radius: 3px;
+            position: relative;
+            margin-top: 40px;
+            .stars-wrapper {
+                display: block;
+                position: absolute;
+                top: -9px;
+                width: 75px;
+                overflow: hidden;
+                left: 45%;
+                margin-left: -25px;
+                background-color: white;
+            }
+            p {
+                font-size: 16px;
+            }
+            p.the-review {
+                font-size: 16px;
+                margin-top: 40px;
+            }
+            p.name {
+                color: #569240;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+// navbar overrides
+
+#body {
+    margin-top: 0px;
+}
+
+nav.transparent {
+    background-color: transparent;
+    ul {
+        li.nav-item {
+            a:not(.btn), a:hover:not(.btn) {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+
+
+// end home page styling

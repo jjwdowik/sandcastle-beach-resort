@@ -1,0 +1,11 @@
+extends ../layouts/default
+
+block head
+    meta(name="description", content="Privacy Policy")
+
+block content
+    .sc-privacy-page
+        if privacys.length
+            each privacy in privacys
+                .section.text-section
+                    div(class="container")!= privacy.content

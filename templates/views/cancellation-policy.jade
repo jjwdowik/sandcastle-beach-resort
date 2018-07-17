@@ -1,0 +1,11 @@
+extends ../layouts/default
+
+block head
+    meta(name="description", content="Cancellation Policy")
+
+block content
+    .sc-cancellation-page
+        if cancellations.length
+            each cancellation in cancellations
+                .section.text-section
+                    div(class="container")!= cancellation.content

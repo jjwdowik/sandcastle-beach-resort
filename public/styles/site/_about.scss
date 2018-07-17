@@ -1,0 +1,47 @@
+.sc-about-page {
+	.section-hero {
+		.container {
+			padding-top: 430px;
+			@media (max-width: $screen-sm-min) {
+				// padding-top: 150px;
+			}
+			h1 {
+				color: $sc-tan;
+				font-size: 50px;
+				@media (max-width: $screen-sm-min) {
+					font-size: 30px;
+				}
+			}
+		}
+	}
+	.text-section {
+		text-align: center;
+	    background: url("../images/grey_sandbag.png") repeat center center;
+	    -webkit-background-size: auto;
+	    -moz-background-size: auto;
+	    -o-background-size: auto;
+	    background-size: auto; 
+	    padding: 0;
+	    padding-top: 40px;
+	    padding-bottom: 40px;
+	    background-position: repeat center center;
+	    background-repeat: repeat;
+	    font-family: "Times New Roman", Times, serif;
+
+	    h1 {
+	    }
+	    p {
+    	 	font-weight: 100;
+            font-style: italic;
+            font-size: 16px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            line-height: 30px;
+	    }
+	    h3 {
+	    	float: right;
+	    	margin-right: 80px;
+	    	padding-bottom: 20px;
+	    }
+	}
+}

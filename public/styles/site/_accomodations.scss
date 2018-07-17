@@ -1,0 +1,359 @@
+// start Accomodation styling
+
+
+.sc-accomodations-page {
+
+    .section-hero {
+        background: url("../images/279_fade.jpg") no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        h1 {
+            @media (max-width: 450px) {
+                font-size: 35px;
+            }
+        }
+    }
+
+    .section-accomodation-buildings {
+        background-color: #F7DCB1;
+        background-image: url("../images/brilliant.png");
+
+        &.individual {
+            padding-top: 120px;
+        }
+
+        .building-all-info, .back-link {
+            // display: none;
+        }
+
+        .back-link {
+            color: blue;
+            cursor: pointer;
+        }
+
+        .building-all-info-wrapper {
+            h2 {
+                margin: 0;
+            }
+            .flexslider {
+                margin: 0 0 20px;
+            }
+            .prices-main-wrapper {
+                padding-top: 50px;
+                padding-bottom: 50px;
+                @media (max-width: $screen-sm-min) {
+                    padding-top: 0px;
+                }
+                .prices-wrapper {
+                    padding-top: 30px;
+                    padding-bottom: 10px;
+                    .prices {
+                        text-align: center;
+                        .rates-wrapper {
+                            padding-top: 10px;
+                            padding-bottom: 10px;
+                            font-size: 16px;
+                            border-top: 1px solid gray;
+                            margin: 0;
+                            .prices-left {
+                                text-align: right;
+                            }
+                            .prices-right {
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+            }
+            .policy {
+                // border-bottom: 1px solid #DCDCDC;
+                p {
+                    margin: 0;
+                    font-size: 12px;
+                }
+            }
+            .description {
+                padding-top: 30px;
+                padding-bottom: 30px;
+                p {
+                    margin: 0;
+                    font-size: 16px;
+                    line-height: 30px;
+                }
+            }
+            .amenities {
+                // border-bottom: 1px solid #DCDCDC;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                .amenity {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    p {
+                        margin: 0;
+                        margin-left: 15px;
+                        margin-top: 5px;
+                        font-size: 16px;
+                    }
+                    img {
+                        float: left;
+                        height: 30px;
+                        width: 40px;
+                        padding-right: 10px;
+                    }
+                }
+            }
+            .what-to-bring {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                .item {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    p {
+                        margin: 0;
+                        margin-left: 15px;
+                        margin-top: 5px;
+                        font-size: 16px;
+                    }
+                    img {
+                        float: left;
+                        height: 30px;
+                        width: 40px;
+                        padding-right: 10px;
+                    }
+                }
+            }
+        }
+
+
+
+
+        // Square item
+        // -------------------------
+        .ih-item.square {
+            position: relative;
+            width: 316px; // 300px + 8px * 2 (border)
+            height: 216px; // 200px + 8px * 2 (border)
+            border: 8px solid #fff;
+            box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 50px;
+            @media (max-width: 400px) {
+                width: 260px;
+                height: 180px;
+            }
+            .building-number {
+                position: absolute;
+                z-index: 1;
+                background-color: black;
+                width: 70px;
+                height: 20px;
+                color: white;
+                opacity: 0.7  ;
+                p {
+                    margin-left: 7px;
+                    margin-top: 2px;
+                }
+                &.suite {
+                    p {
+                        margin-left: 13px;
+                    }
+                }
+                &.house {
+                    width: 185px;
+                }
+            }
+            @include transition( all 0.35s ease-in-out );
+            &,
+            * {
+                @include box-sizing(border-box);
+            }
+
+            a {
+                color: #333;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                min-height: 200px;
+                @media (max-width: 400px) {
+                    min-height: 164px;
+                }
+            }
+            .info {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left:0;
+                right: 0;
+                text-align: center;
+                @include backface-visibility(hidden);
+                @media (max-width: $screen-sm-min - 1) {
+                    visibility: visible!important;
+                    opacity: .8!important;
+                    -webkit-transform: none!important;
+                    -moz-transform: none!important;
+                    -ms-transform: none!important;
+                    -o-transform: none!important;
+                    transform: none!important;
+                }
+
+            }
+
+        }
+
+        // Shared
+        // -------------------------
+        .ih-item.square.effect3 {
+            overflow: hidden;
+
+            &.colored {
+                .info {
+                    background: black;
+                }
+            }
+
+            .img {
+                @include transform( translateY(0) );
+                @include transition(  all .35s ease-in-out );
+            }
+
+            .info {
+                height: 45px;
+                background: black;
+                opacity: 0;
+                @include transition(  all .35s ease-in-out );
+
+                h3 {
+                    text-transform: uppercase;
+                    color: #fff;
+                    text-align: center;
+                    font-size: 17px;
+                    padding: 10px 10px 0 4px;
+                    margin: 4px 0 0 0;
+                }
+
+                p {
+                    font-style: italic;
+                    font-size: 12px;
+                    position: relative;
+                    color: #bbb;
+                    padding: 5px;
+                    text-align: center;
+                }
+            }
+
+            a:hover {
+                .info {
+                    visibility: visible;
+                    opacity: .8;
+                }
+            }
+        }
+
+        // -------------------------
+        .ih-item.square.effect3.bottom_to_top {
+            .info {
+                top: auto;
+                @include transform( translateY(100%) );
+            }
+
+            a:hover {
+                .img {
+                    // @include transform( translateY(-50px) );
+                }
+
+                .info {
+                    @include transform( translateY(0) );
+                }
+            }
+        }
+
+    }
+
+
+}
+
+#layoutModal {
+    .modal-content {
+        .modal-header {
+            h1 {
+                text-align: center;
+            }
+        }
+        .modal-body {
+            .layout-wrapper {
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+
+// modal
+#buildingModal {
+    .modal-content {
+        .modal-header {
+            padding-bottom: 5px;
+            h1 {
+                text-align: center;
+            }
+        }
+        .modal-body {
+            h2 {
+                margin: 0;
+            }
+            .flexslider {
+                margin: 0 0 20px;
+            }
+            .prices {
+                text-align: center;
+            }
+            .policy {
+                border-bottom: 1px solid #DCDCDC;
+                p {
+                    margin: 0;
+                    font-size: 10px;
+                }
+            }
+            .description {
+                border-bottom: 1px solid #DCDCDC;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                p {
+                    margin: 0;
+                }
+            }
+            .amenities {
+                border-bottom: 1px solid #DCDCDC;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                p {
+                    margin: 0;
+                    margin-left: 15px;
+                }
+            }
+            .what-to-bring {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                p {
+                    margin: 0;
+                    margin-left: 15px;
+                }
+            }
+
+        }
+    }
+}

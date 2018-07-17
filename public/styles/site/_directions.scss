@@ -1,0 +1,26 @@
+.sc-directions-page {
+	.section-hero {
+		.container {
+			padding-top: 230px;
+			@media (max-width: $screen-sm-min) {
+				padding-top: 150px;
+			}
+		}
+	}
+
+	#map {
+        width: 100%;
+        min-height: 500px;
+    }
+
+    .section-links {
+    	text-align: center;
+    	ul {
+    		padding: 0;
+    		margin: 0;
+			li {
+				list-style-type: none;
+			}
+    	}
+    }
+}

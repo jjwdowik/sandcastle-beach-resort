@@ -1,0 +1,96 @@
+extends ../layouts/default
+
+block head
+    meta(name="description", content="Accomodations to stay at the Resort")
+    meta(name="keywords", content="Beach Resort, Lake Huron, Michigan Lodging, Oscoda Michigan, Cottages, Suites")
+
+
+block css
+    link(href="/styles/lib/flexslider.css", rel="stylesheet")
+
+block content
+    .sc-accomodations-page
+        if accommodation.length
+            each data in accommodation
+                .section.section-accomodation-buildings.individual
+                    .container
+                        .building-all-info-wrapper
+                            a.back-link(href="/accommodations") ← Back to all Accommodations
+                            .building-all-info
+                                h1= building.name
+                                .col-md-6
+                                    .flexslider
+                                        ul.slides
+                                            each image in building.images
+                                                li(data-thumb=image.limit(534))
+                                                    img(src=image.limit(534))
+                                .col-md-6
+                                    .description
+                                        p= building.description
+                                .col-xs-12.prices-main-wrapper
+                                    .prices-wrapper.row
+                                        .col-sm-6.prices
+                                            h2= data.ratesFirstHeader
+                                            p.prices-dates= data.ratesFirstDates
+                                            .rates-wrapper.row
+                                                .col-xs-12
+                                                    .col-xs-6
+                                                        p.prices-left= data.ratesFirstTitle
+                                                    .col-xs-6
+                                                        p.prices-right= "$" + building.ratesFirstPrice
+                                                .col-xs-12
+                                                    .col-xs-6
+                                                        p.prices-left= data.ratesSecondTitle
+                                                    .col-xs-6
+                                                        p.prices-right= "$" + building.ratesSecondPrice
+                                        .col-sm-6.prices
+                                            h2= data.ratesSecondHeader
+                                            p.prices-dates= data.ratesSecondDates
+                                            .rates-wrapper.row
+                                                .col-xs-12
+                                                    .col-xs-6
+                                                        p.prices-left= data.ratesThirdTitle
+                                                    .col-xs-6
+                                                        p.prices-right= "$" + building.ratesThirdPrice
+                                                .col-xs-12
+                                                    .col-xs-6
+                                                        p.prices-left= data.ratesFourthTitle
+                                                    .col-xs-6
+                                                        p.prices-right= "$" + building.ratesFourthPrice
+                                    .policy
+                                        p= data.disclaimer
+                                .col-xs-12
+                                    .col-sm-6
+                                        .amenities
+                                            h2 Amenities
+                                            if data.amenities.length
+                                                each amenity in data.amenities
+                                                    .amenity
+                                                        img(src=amenity.image.secure_url)
+                                                        p= amenity.name
+                                    .col-sm-6
+                                        .what-to-bring
+                                            h2 What to Bring
+                                            if data.whatToBring.length
+                                                each item in data.whatToBring
+                                                    .item
+                                                        img(src=item.image.secure_url)
+                                                        p= item.name
+                include ../includes/cta.jade
+
+    // Building Layout Modal
+    .modal.fade(id="layoutModal", tabindex="-1", role="dialog", aria-labelledby="myModalLabel")
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    button.close(type="button", data-dismiss="modal", aria-label="Close")
+                        span(aria-hidden="true") &times;
+                    h1.modal-title The Resort Layout
+                .modal-body
+                    .row.layout-wrapper
+                        img(src="/images/Property_Layout.png")
+
+block js
+    script(src='/js/lib/jquery.flexslider-min.js')
+    script(src='/js/accomodation.js')
+

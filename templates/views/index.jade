@@ -1,0 +1,54 @@
+extends ../layouts/default
+
+block head
+    meta(name="description", content="Sandcastle Beach Resort in Oscoda Michigan")
+    meta(name="keywords", content="Beach Resort, Lake Huron, Michigan Lodging, Oscoda Michigan")
+
+block content
+    .sc-home-page
+        if homes.length
+            each home in homes
+                .section.section-hero(style='background: url('+home._.backgroundImage1.limit()+')no-repeat center center')
+                    .container
+                        h1.curve= home.headerFirst
+                        h1.hide= home.headerFirst
+                        h2= home.subHeaderFirst
+                        a(href="http://www.webervations.com/magic-scripts/resbook.asp?memberid=SandcastleOscoda" target="_blank")
+                            button.btn.btn-primary= home.buttonTextFirst
+                        p= home.announcement
+                .section.section-amenities
+                    .container
+                        h1= home.headerSecond
+                        each amenity, index in home.amenities
+                            if index % 4 == 0
+                                .row
+                            .col-md-3.col-sm-6
+                                .amentity-wrapper
+                                    img(src=amenity.image.secure_url)
+                                    h1= amenity.name
+                                    p= amenity.description
+                .section.section-buildings(style='background: url('+home._.backgroundImage2.limit()+')no-repeat center center')
+                    .container
+                        h1= home.headerThird
+                        h2= home.subHeaderThird
+                        a(href="/accommodations")
+                            button.btn.btn-primary= home.buttonTextThird
+                        p.large= home.announcementThird
+                .section.section-reviews
+                    .container
+                        h1= home.headerFourth
+                        each review in home.customerReviews
+                            .col-md-3.col-sm-6
+                                .review
+                                    - var n = 0
+                                    .stars-wrapper
+                                        while review.stars > n
+                                            span(class="glyphicon glyphicon-star")
+                                            - n++
+                                    p.the-review= '"' + review.review + '"'
+                                    p.name= '-' + review.name
+block js
+    script(src='/js/lib/jquery.lettering-0.6.1.min.js')
+    script(src='/js/lib/circletype.min.js')
+    script(src='/js/lib/jquery.fittext.js')
+    script(src='/js/home.js')

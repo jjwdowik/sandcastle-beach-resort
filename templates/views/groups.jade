@@ -1,0 +1,38 @@
+extends ../layouts/default
+
+block head
+    meta(name="description", content="Sandcastle Beach Resort Group Accommodations")
+
+block content
+    if groups.length
+        each group in groups
+            .section.section-hero(style='background: url('+group._.backgroundHero.limit()+')no-repeat center center')
+                .container
+                    h1= group.headerFirst
+                    div(class="subheader-content")!= group.subHeaderSection
+            .section-wrapper-groups
+                .section
+                    .container
+                        .row
+                            .col-md-6
+                                h2.half-header= group.header1
+                                div(class="content-container")!= group.section1
+                            .col-md-6
+                                img.img-white-border.img-responsive(src=group._.image1.limit(500) alt="img")
+                .section
+                    .container
+                        .row
+                            .col-md-6.col-md-push-6
+                                h2.half-header= group.header2
+                                div(class="content-container")!= group.section2
+                            .col-md-6.col-md-pull-6
+                                img.img-white-border.img-responsive(src=group._.image2.limit(500) alt="img")
+                .section
+                    .container
+                        .row
+                            .col-md-6
+                                h2.half-header= group.header3
+                                div(class="content-container")!= group.section3
+                            .col-md-6
+                                img.img-white-border.img-responsive(src=group._.image3.limit(500) alt="img")
+            include ../includes/cta.jade

@@ -1,0 +1,17 @@
+extends ../layouts/default
+
+block head
+    meta(name="description", content="About Sandcastle Beach Resort")
+    meta(name="keywords", content="Beach Resort, Lake Huron, Michigan Lodging, Oscoda Michigan")
+
+block content
+    .sc-about-page
+        if abouts.length
+            each about in abouts
+                .section.section-hero(style='background: url('+about._.backgroundImage1.limit()+')no-repeat center center')
+                    .container
+                .section.text-section
+                        .container
+                            h1= about.headerFirst
+                            p!= about.storyDescription
+                            h3= "-Tom & Stacy"

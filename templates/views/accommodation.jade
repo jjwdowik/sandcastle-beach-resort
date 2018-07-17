@@ -1,0 +1,67 @@
+extends ../layouts/default
+
+block head
+    meta(name="description", content="Accomodations to stay at the Resort")
+    meta(name="keywords", content="Beach Resort, Lake Huron, Michigan Lodging, Oscoda Michigan, Cottages, Suites")
+
+
+block css
+    link(href="/styles/lib/flexslider.css", rel="stylesheet")
+
+block content
+    .sc-accomodations-page
+        if accommodation.length
+            each data in accommodation
+                .section.section-hero(style='background: url('+data._.backgroundImage1.limit()+')no-repeat center center')
+                    .container
+                        h1= data.headerFirst
+                        h2= data.subHeaderFirst
+                        a(href="#" data-toggle="modal" data-target="#layoutModal")
+                            button.btn.btn-primary= data.buttonTextFirst
+                        p.large= data.announcementFirst
+                .section.section-accomodation-buildings
+                    .container
+                        .building-squares-wrapper
+                            - var start = 0
+                            each building, index in data.buildings
+                                if start == 0
+                                    h1 Cottages
+                                    - start = 1
+                                if building.type > start
+                                    if building.type == 2
+                                        .row
+                                        h1 Suites
+                                        - start = 2
+                                    if building.type == 3
+                                        .row
+                                        h1 House
+                                        - start = 3
+                                .col-lg-4.col-sm-6
+                                    div(class="ih-item square effect3 bottom_to_top")
+                                        - var className = "";
+                                        - if (building.type == 2) { className = "suite"} else if(building.type == 3) {className = "house"}
+                                        div(class="building-number "+className)
+                                            p= building.name
+                                        - url = "/accommodations/" + building.key
+                                        a(href=url data-cottage-index=index)
+                                            .img
+                                                img(src=building._.frontImage.limit(300) alt="img")
+                                            .info
+                                                h3= building.previewText
+                include ../includes/cta.jade
+
+    // Building Layout Modal
+    .modal.fade(id="layoutModal", tabindex="-1", role="dialog", aria-labelledby="myModalLabel")
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    button.close(type="button", data-dismiss="modal", aria-label="Close")
+                        span(aria-hidden="true") &times;
+                    h1.modal-title The Resort Layout
+                .modal-body
+                    .row.layout-wrapper
+                        img(src="/images/Property_Layout.png")
+
+block js
+    script(src='/js/lib/jquery.flexslider-min.js')
+    script(src='/js/accomodation.js')

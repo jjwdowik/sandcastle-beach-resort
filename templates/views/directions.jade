@@ -1,0 +1,17 @@
+extends ../layouts/default
+
+block head
+    meta(name="description", content="Directions to Sandcastle Beach Resort")
+    meta(name="keywords", content="Beach Resort, Lake Huron, Michigan Lodging, Oscoda Michigan, Directions to Sandcastle")
+
+
+block content
+    .sc-directions-page
+        if directions.length
+            each direction in directions
+                .section.section-hero(style='background: url('+direction._.backgroundImage1.limit()+')no-repeat center center')
+                    .container
+                        h1= direction.headerFirst
+                div(id='map')
+                .section.section-links
+                    div(class="container")!= direction.linkContent
