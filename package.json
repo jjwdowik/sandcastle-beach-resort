@@ -6,7 +6,7 @@
     "async": "~0.9.0",
     "dotenv": "~0.4.0",
     "jade": "^1.11.0",
-    "keystone": "^4.0.0-beta.7",
+    "keystone": "^4.0.0-rc.0",
     "mailgun-js": "^0.7.10",
     "newrelic": "*",
     "node-sass": "^3.3.3",
