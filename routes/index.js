@@ -25,7 +25,6 @@ var keystone = require('keystone'),
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('render', middleware.flashMessages);
-keystone.pre('render', middleware.sharedLinks);
 
 // Import Route Controllers
 var routes = {
@@ -39,7 +38,6 @@ exports = module.exports = function(app) {
       var enforce = require('express-sslify');
       app.use(enforce.HTTPS({ trustProtoHeader: true }));
   }
-
 	// Views
 	app.get('/', routes.views.index);
 	app.get('/accommodations', routes.views.accommodation);
@@ -48,7 +46,11 @@ exports = module.exports = function(app) {
   app.get('/groups', routes.views.groups);
 	app.get('/location-links', routes.views.directions);
 	app.get('/privacy-policy', routes.views.privacy);
+
 	app.get('/cancellation-policy', routes.views.cancellation);
+
+  app.get('/booking', routes.views.booking);
+
 	app.all('/contact', routes.views.contact);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

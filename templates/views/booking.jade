@@ -1,0 +1,11 @@
+extends ../layouts/default
+
+block head
+    meta(name="description", content="Booking")
+
+block content
+    .sc-cancellation-page
+        if bookings.length
+          each booking in bookings
+              .section.text-section
+                  div(class="container")!= booking.content

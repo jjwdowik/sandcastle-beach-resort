@@ -58,18 +58,6 @@ exports.flashMessages = function(req, res, next) {
 
 };
 
-exports.sharedLinks = function(req, res, next) {
-	var link = keystone.list('Links').model.findOne();
-	if(!link.bookingLink) {
-		link.bookingLink = "http://www.webervations.com/magic-scripts/resbook.asp?memberid=SandcastleOscoda"
-	}
-	res.locals.linkData = link;
-
-	next();
-
-};
-
-
 /**
 	Prevents people from accessing protected pages when they're not signed in
  */

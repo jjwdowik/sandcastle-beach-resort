@@ -12,6 +12,7 @@ exports = module.exports = function(req, res) {
 
 
   view.query('groups', keystone.list('Groups').model.find());
+  view.query('linkData', keystone.list('Links').model.findOne());
 
   // Render the view
   view.render('groups');
