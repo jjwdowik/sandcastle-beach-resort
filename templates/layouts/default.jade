@@ -93,7 +93,7 @@ html
                         li.nav-item
                             a(href="/location-links", class=(section == 'directions') ? 'active' : '') Location/Links
                         li.nav-item
-                            a.btn(href=linkData.bookingLink target="_blank") Reserve Online
+                            a.btn(href=(linkData ? linkData.bookingLink : "http://www.webervations.com/magic-scripts/resbook.asp?memberid=SandcastleOscoda") target="_blank") Reserve Online
 
         //- BODY
         #body

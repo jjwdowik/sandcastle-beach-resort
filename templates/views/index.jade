@@ -13,7 +13,7 @@ block content
                         h1.curve= home.headerFirst
                         h1.hide= home.headerFirst
                         h2= home.subHeaderFirst
-                        a(href=linkData.bookingLink target="_blank")
+                        a(href=linkData ? linkData.bookingLink : "http://www.webervations.com/magic-scripts/resbook.asp?memberid=SandcastleOscoda" target="_blank")
                             button.btn.btn-primary= home.buttonTextFirst
                         p= home.announcement
                 .section.section-amenities
