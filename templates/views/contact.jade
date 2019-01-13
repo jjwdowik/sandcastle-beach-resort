@@ -2,11 +2,14 @@ extends ../layouts/default
 
 block head
     meta(name="description", content="Contact Us")
+    script(src="https://www.google.com/recaptcha/api.js", async, defer)
+    script.
+        grecaptcha.reset()
 
 block intro
     .container.contact-top
         h1 Contact Us
-        
+
 block content
     .container.contact-bottom
         if enquirySubmitted
@@ -14,6 +17,7 @@ block content
         else
             .row: .col-sm-8.col-md-6
                 form(method='post')
+                    .g-recaptcha(data-sitekey=process.env.GOOGLE_RECAPTCHA_SITEKEY)
                     input(type='hidden', name='action', value='contact')
                     .form-group(class=validationErrors.name ? 'has-error' : null)
                         label Name

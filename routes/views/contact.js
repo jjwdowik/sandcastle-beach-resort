@@ -1,6 +1,8 @@
 var keystone = require('keystone'),
 	Enquiry = keystone.list('Enquiry');
 
+var axios = require('axios');
+
 exports = module.exports = function(req, res) {
 
 	var view = new keystone.View(req, res),
@@ -21,18 +23,45 @@ exports = module.exports = function(req, res) {
 		var newEnquiry = new Enquiry.model(),
 			updater = newEnquiry.getUpdateHandler(req);
 
-		updater.process(req.body, {
-			flashErrors: true,
-			fields: 'name, email, phone, enquiryType, message',
-			errorMessage: 'There was a problem submitting your enquiry:'
-		}, function(err) {
-			if (err) {
-				locals.validationErrors = err.errors;
-			} else {
-				locals.enquirySubmitted = true;
-			}
-			next();
+		var googleUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + process.env.GOOGLE_RECAPTCHA_SECRETKEY +
+			"&response=" + req.body["g-recaptcha-response"];
+
+		var googleCall = axios.post(googleUrl, {
+        headers: {
+            'Content-Type': 'application/json',
+        }
+		  })
+		  .then(function (response) {
+		  	return response;
+		  })
+		  .catch(function (error) {
+		    req.flash('error', 'Error with request. Please try again. ');
+		    next();
+		  });
+
+		googleCall.then(function(response) {
+	  	if(response.data.success) {
+				updater.process(req.body, {
+					flashErrors: true,
+					fields: 'name, email, phone, enquiryType, message',
+					errorMessage: 'There was a problem submitting your enquiry:'
+				}, function(err) {
+					if (err) {
+						locals.validationErrors = err.detail;
+					} else {
+						locals.enquirySubmitted = true;
+					}
+					next();
+				});
+	  	} else {
+	  		req.flash('error', 'Error processing reCAPTCHA. Please try again. ');
+	  		next();
+	  	}
+		}).catch(function (response) {
+    	req.flash('error', 'Error with request. Please try again. ');
 		});
+
+
 
 	});
 
