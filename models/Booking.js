@@ -8,7 +8,7 @@ var keystone = require('keystone'),
 
 var Booking = new keystone.List('Booking', {
   autokey: { from: 'name', path: 'key', unique: true },
-  label: 'Booking Policy'
+  label: 'Booking Page'
 });
 
 Booking.add({
