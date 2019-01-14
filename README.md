@@ -1,7 +1,7 @@
 # Run locally
 
-npm install
-node keystone.js
+    npm install
+    node keystone.js
 
 ## Keystone JS CMS
 
