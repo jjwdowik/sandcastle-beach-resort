@@ -35,3 +35,5 @@ public/styles/site.css
 
 # ignore files created from nodenv (node version manager)
 .node-version
+
+updates/0.0.2-admins.js

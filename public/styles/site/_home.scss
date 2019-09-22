@@ -18,11 +18,13 @@
     }
 
     .section-hero {
-        background: url("../images/279_fade.jpg") no-repeat center center;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+        // background: url("../images/279_fade.jpg") no-repeat center center;
+        // -webkit-background-size: cover;
+        // -moz-background-size: cover;
+        // -o-background-size: cover;
+        // background-size: cover;
+        background: none!important;
+        padding-top: 0px;
         h1 {
             display: block;
             font-family: 'AR JULIAN'; font-weight: 100;
@@ -51,6 +53,7 @@
 
     .section-amenities {
         text-align: center;
+        background-color: #fff;
         .amentity-wrapper {
             margin-top: 40px;
             img {
@@ -110,9 +113,7 @@
 
     .section-reviews {
         text-align: center;
-
-
-
+        background-color: #fff;
         .review {
             min-height: 200px;
             padding: 20px 20px 20px;
