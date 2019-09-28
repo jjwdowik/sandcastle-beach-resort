@@ -310,9 +310,16 @@ body, html {
 }
 
 .black-transparent-wrapper {
-    border-radius: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    z-index: 24;
+    left: 0;
+    right: 0;
+    margin-bottom: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
