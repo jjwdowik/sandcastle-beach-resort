@@ -8,7 +8,11 @@ block content
     .sc-home-page
         if homes.length
             each home in homes
-                .section.section-hero(style='background: url('+home._.backgroundImage1.limit()+')no-repeat center center')
+                .section.section-hero
+                    .video-wrapper.
+                        <video muted=true loop autoplay playsinline async poster="/images/video-preview.png" class="canvas-video__Video-s76bwsi-1 gNNqcQ">
+                            <source type="video/mp4" src="https://drive.google.com/uc?export=download&id=1la_HRMB_wxx_LvulIoakWRCMFHwZ_2zD">
+                        </video>
                     .container
                         h1.curve= home.headerFirst
                         h1.hide= home.headerFirst
@@ -32,7 +36,7 @@ block content
                         h1= home.headerThird
                         h2= home.subHeaderThird
                         a(href="/accommodations")
-                            button.btn.btn-primary= home.buttonTextThird
+                            button.btn.btn-primary.solid-blue= home.buttonTextThird
                         p.large= home.announcementThird
                 .section.section-reviews
                     .container
