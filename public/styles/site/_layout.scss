@@ -214,9 +214,12 @@ body, html {
     background-size: cover!important;
     background-position: no-repeat center center;
     background-repeat: no-repeat;
-    min-height: 600px!important;
+    min-height: 500px!important;
     // black overlay hack
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.5);
+    @media (max-width: $screen-sm-min) {
+        min-height: 300px!important;
+    }
     .container {
         padding-top: 130px;
         color: white;
@@ -312,8 +315,10 @@ body, html {
 .black-transparent-wrapper {
     padding-top: 10px;
     padding-bottom: 10px;
-    background: rgba(0, 0, 0, 0.7);
-    position: absolute;
+    background: rgba(0, 0, 0, 1);
+    color: #FFFFFF;
+    position: relative;
+    text-align: center;
     bottom: 0;
     z-index: 24;
     left: 0;
