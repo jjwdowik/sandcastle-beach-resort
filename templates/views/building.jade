@@ -29,7 +29,7 @@ block content
                                         p= building.description
                                 .col-xs-12.prices-main-wrapper
                                     .prices-wrapper.row
-                                        .col-sm-6.prices
+                                        .col-sm-12.prices
                                             h2= data.ratesFirstHeader
                                             p.prices-dates= data.ratesFirstDates
                                             .rates-wrapper.row
@@ -43,20 +43,6 @@ block content
                                                         p.prices-left= data.ratesSecondTitle
                                                     .col-xs-6
                                                         p.prices-right= "$" + building.ratesSecondPrice
-                                        .col-sm-6.prices
-                                            h2= data.ratesSecondHeader
-                                            p.prices-dates= data.ratesSecondDates
-                                            .rates-wrapper.row
-                                                .col-xs-12
-                                                    .col-xs-6
-                                                        p.prices-left= data.ratesThirdTitle
-                                                    .col-xs-6
-                                                        p.prices-right= "$" + building.ratesThirdPrice
-                                                .col-xs-12
-                                                    .col-xs-6
-                                                        p.prices-left= data.ratesFourthTitle
-                                                    .col-xs-6
-                                                        p.prices-right= "$" + building.ratesFourthPrice
                                     .policy
                                         p= data.disclaimer
                                 .col-xs-12
