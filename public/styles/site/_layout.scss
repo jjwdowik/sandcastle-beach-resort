@@ -301,7 +301,7 @@ body, html {
     height: 100%;
     overflow: hidden;
     position: absolute;
-    video {
+    video, img {
         // opacity: 0.25;
         display: block;
         object-fit: cover;
