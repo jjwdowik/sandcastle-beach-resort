@@ -5,7 +5,7 @@ block head
 
 block content
     .sc-privacy-page
-        if privacys.length
+        if privacys && privacys.length
             each privacy in privacys
                 .section.text-section
                     div(class="container")!= privacy.content
