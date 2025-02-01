@@ -10,7 +10,7 @@ block css
 
 block content
     .sc-accomodations-page
-        if accommodation.length
+        if accommodation && accommodation.length
             each data in accommodation
                 .section.section-hero(style='background: url('+data._.backgroundImage1.limit()+')no-repeat center center')
                     .container

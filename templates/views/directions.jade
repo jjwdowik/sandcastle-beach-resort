@@ -7,7 +7,7 @@ block head
 
 block content
     .sc-directions-page
-        if directions.length
+        if directions && directions.length
             each direction in directions
                 .section.section-hero(style='background: url('+direction._.backgroundImage1.limit()+')no-repeat center center')
                     .container

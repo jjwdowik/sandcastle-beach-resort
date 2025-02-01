@@ -10,7 +10,7 @@ block css
 
 block content
     .sc-accomodations-page
-        if accommodation.length
+        if accommodation && accommodation.length
             each data in accommodation
                 .section.section-accomodation-buildings.individual
                     .container
@@ -49,7 +49,7 @@ block content
                                     .col-sm-6
                                         .amenities
                                             h2 Amenities
-                                            if data.amenities.length
+                                            if data.amenities && data.amenities.length
                                                 each amenity in data.amenities
                                                     .amenity
                                                         img(src=amenity.image.secure_url)
@@ -57,7 +57,7 @@ block content
                                     .col-sm-6
                                         .what-to-bring
                                             h2 What to Bring
-                                            if data.whatToBring.length
+                                            if data.whatToBring && data.whatToBring.length
                                                 each item in data.whatToBring
                                                     .item
                                                         img(src=item.image.secure_url)

@@ -6,7 +6,7 @@ block head
 
 block content
     .sc-about-page
-        if abouts.length
+        if abouts && abouts.length
             each about in abouts
                 .section.section-hero(style='background: url('+about._.backgroundImage1.limit()+')no-repeat center center')
                     .container
