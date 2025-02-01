@@ -4,7 +4,7 @@ block head
     meta(name="description", content="Sandcastle Beach Resort Group Accommodations")
 
 block content
-    if groups.length
+    if groups && groups.length
         each group in groups
             .section.section-hero(style='background: url('+group._.backgroundHero.limit()+')no-repeat center center')
                 .container

@@ -5,7 +5,7 @@ block head
 
 block content
     .sc-cancellation-page
-        if bookings.length
+        if bookings && bookings.length
           each booking in bookings
               .section.text-section
                   div(class="container")!= booking.content
